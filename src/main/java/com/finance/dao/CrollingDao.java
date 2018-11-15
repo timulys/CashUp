@@ -15,6 +15,7 @@ public class CrollingDao {
 
     public Document crolling(String url) throws IOException {
         System.out.println("Crolling Start Date : " + TimeUtils.getCurrentDate());
+        System.out.println(url);
         Document doc = Jsoup.connect(url).get();
         System.out.println("Crolling End Date : " + TimeUtils.getCurrentDate());
 
