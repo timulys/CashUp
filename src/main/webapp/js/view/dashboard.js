@@ -1,7 +1,6 @@
 function showForeign() {
     $.ajax({
-        url: "ajax/dashboard",
-        data: { type:"foreign" },
+        url: "ajax/foreign",
         success: function(o) {
             $("#contentarea").empty();
             $("#contentarea").append(o);
@@ -11,8 +10,7 @@ function showForeign() {
 
 function showDomestic() {
     $.ajax({
-        url: "ajax/dashboard",
-        data: { type:"domestic" },
+        url: "ajax/domestic",
         success: function(o) {
             $("#contentarea").empty();
             $("#contentarea").append(o);

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class DashBoardService {
@@ -22,12 +24,15 @@ public class DashBoardService {
         return elements.toString();
     }
 
-    public String showForeignChart() throws IOException {
+    public List<Elements> showForeignChart() throws IOException {
         Document doc = crollingDao.crolling("https://finance.naver.com/world/");
         Elements elements = ElementUtils.getElement(doc, ".market_include");
 
-        Elements worldIndexColumn1 = elements.select("worldIndexColumn1>li");
+        List<Elements> worldIndexList = new ArrayList<>();
+        worldIndexList.add(elements.select("#worldIndexColumn1>li"));
+        worldIndexList.add(elements.select("#worldIndexColumn2>li"));
+        worldIndexList.add(elements.select("#worldIndexColumn3>li"));
 
-        return worldIndexColumn1.toString();
+        return worldIndexList;
     }
 }

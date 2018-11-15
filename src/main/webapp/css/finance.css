@@ -10,7 +10,7 @@ li{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none}
 a:hover,a:active,a:focus{text-decoration:underline}
-body{text-align:center}
+/*body{text-align:center}*/
 .clear{display:none;overflow:hidden;clear:both;height:0}
 .blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}
 /* Layout */

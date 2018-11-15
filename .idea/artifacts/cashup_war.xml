@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cashup:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="cashup-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cashup:war exploded" />
+    </root>
+  </artifact>
+</component>
