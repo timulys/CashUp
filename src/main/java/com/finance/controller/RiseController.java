@@ -7,11 +7,18 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.IOException;
 
 @Controller
-public class CashUpController {
+public class RiseController {
     @GetMapping("/sise_rise")
-    public ModelAndView rise() throws IOException {
+    public ModelAndView siseRise() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("index");
+        mv.setViewName("siseRise");
+        return mv;
+    }
+
+    @GetMapping("/sise_low_up")
+    public ModelAndView siseLowUp() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("siseLowUp");
         return mv;
     }
 }

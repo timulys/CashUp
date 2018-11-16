@@ -1,7 +1,6 @@
 var jqGrid;
 
 function grid(category) {
-    console.log(category);
     jqGrid = $("#jqGridList").jqGrid({
         url: "ajax/sise_rise",
         postData: {category : category},
@@ -14,6 +13,7 @@ function grid(category) {
         sortable: true,
         loadui: "block",
         viewrecords: true,
+        pager: "#jqGridPager",
         jsonReader: {
             root: "listData",
             page: "page",
@@ -22,44 +22,64 @@ function grid(category) {
             repeatitems: false,
             id: "_ID_"
         },
-        colNames: ["순번", "이름", "현재가", "전일비", "등락률", "거래량", "매수호가", "매도호가", "매수총잔량", "매도총잔량", "PER", "ROE"],
+        colNames: ["순번", "이름", "현재가", "전일비", "등락률", "거래량", "PER", "ROE"],
         colModel: [
             {title: true, name: "num", sortable: true, hidden: false, hidedlg: false, align: "left", width: 60},
-            {title: true, name: "name", sortable: true, hidden: false, hidedlg: false, align: "left", width: 200},
+            {title: true, name: "name", sortable: true, hidden: false, hidedlg: false, align: "left", width: 240},
             {title: true, name: "currentCost", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
             {title: true, name: "adayCost", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
-            {title: true, name: "fluctuation", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80,
+            {title: true, name: "fluctuation", sortable: true, hidden: false, hidedlg: false, align: "left", width: 120,
                 cellattr: function (data) {
                     return 'style="color:red; font-weight:bold"';
                 }
             },
-            {title: true, name: "volume", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
-            {title: true, name: "buying", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
-            {title: true, name: "celling", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
-            {title: true, name: "buyingVol", sortable: true, hidden: false, hidedlg: false, align: "left", width: 100},
-            {title: true, name: "cellingVol", sortable: true, hidden: false, hidedlg: false, align: "left", width: 100},
-            {title: true, name: "per", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80},
-            {title: true, name: "roe", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80}
+            {title: true, name: "volume", sortable: true, hidden: false, hidedlg: false, align: "left", width: 100},
+            {title: true, name: "per", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80,
+                cellattr: function (rowId, iv) {
+                    if (iv.indexOf("-") != -1) {
+                        return 'style="color:blue;"';
+                    }
+                }
+            },
+            {title: true, name: "roe", sortable: true, hidden: false, hidedlg: false, align: "left", width: 80,
+                cellattr: function (rowId, iv) {
+                    if (iv.indexOf("-") != -1) {
+                        return 'style="color:blue;"';
+                    }
+                }
+            }
         ],
     });
 };
 
-function reloadKospi() {
+var kospi = setInterval(function() {
     jqGrid.setGridParam({
         postData:{
             category:"kospi"
         }
     });
     jqGrid.trigger("reloadGrid");
-}
+}, 5000);
 
-function reloadKosdac() {
+var kosdac = setInterval(function() {
     jqGrid.setGridParam({
         postData:{
             category:"kosdac"
         }
     });
     jqGrid.trigger("reloadGrid");
+}, 5000);
+
+function reloadKospi() {
+    clearInterval(kosdac);
+    grid("kospi");
+    kospi;
+}
+
+function reloadKosdac() {
+    clearInterval(kospi);
+    grid("kosdac");
+    kosdac;
 }
 
 $(function() {

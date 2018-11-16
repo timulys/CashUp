@@ -19,5 +19,5 @@ function showDomestic() {
 }
 
 $(function() {
-
+    showDomestic();
 });

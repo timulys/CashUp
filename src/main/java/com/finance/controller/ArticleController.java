@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class DashBoardController {
-    @GetMapping("/")
-    public ModelAndView dashboard() {
+public class ArticleController {
+
+    @GetMapping("/article")
+    public ModelAndView getArticle() {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("dashboard");
+        mv.setViewName("article");
         return mv;
     }
 }

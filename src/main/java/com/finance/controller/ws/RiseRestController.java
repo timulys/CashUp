@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 
 @RestController
-public class CashUpRestController {
+public class RiseRestController {
 
     @Autowired
     private RiseSubjectService service;

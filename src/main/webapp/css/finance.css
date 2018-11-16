@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* NHN Services Webstandard Development Team YHS 091207 */
 /* Common */
-body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button{margin:0;padding:0}
+/*body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button{margin:0;padding:0}
 body,input,textarea,select,table{font-family:'돋움',Dotum,AppleGothic,sans-serif;font-size:12px}
 img,fieldset{border:0}
 hr,legend{display:none}
@@ -10,11 +10,11 @@ li{list-style:none}
 em,address{font-style:normal}
 a{text-decoration:none}
 a:hover,a:active,a:focus{text-decoration:underline}
-/*body{text-align:center}*/
+!*body{text-align:center}*!
 .clear{display:none;overflow:hidden;clear:both;height:0}
-.blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}
+.blind{position:absolute;clip:rect(0 0 0 0);width:1px;height:1px;margin:-1px;overflow:hidden}*/
 /* Layout */
-#container{width:100%;padding-bottom:70px}
+/*#container{width:100%;padding-bottom:70px}
 #container:after{display:block;clear:both;content:""}
 #container #content{float:left;width:720px}
 .marketindex_content{float:left;width:720px;padding-bottom:70px}
@@ -23,9 +23,9 @@ a:hover,a:active,a:focus{text-decoration:underline}
 .detail #content{width:700px !important}
 .search #content{width:100% !important}
 .notice #content{width:100% !important}
-.detail .aside{width:220px !important}
+.detail .aside{width:220px !important}*/
 /* Footer */
-#footer{position:relative;clear:both;width:960px;padding:25px 0 50px;border-top:1px solid #bebfc1;text-align:center}
+/*#footer{position:relative;clear:both;width:960px;padding:25px 0 50px;border-top:1px solid #bebfc1;text-align:center}
 .home #footer{border-top:3px solid #535663}
 #footer *{margin:0;padding:0;color:#444;font-family:'나눔고딕',nanumgothic,'돋움',dotum,gulim,AppleGothic,Sans-serif;font-size:12px;line-height:normal;list-style:none;font-style:normal}
 #footer a{color:#333;text-decoration:none}
@@ -53,7 +53,7 @@ a:hover,a:active,a:focus{text-decoration:underline}
 #footer .provider_layer__tit{display:block;padding-bottom:3px;font-weight:normal;color:#333;font-size:11px;letter-spacing:-1px;line-height:15px;font-family:Dotum,'돋움'}
 #footer .provider_layer p{color:#888;font-size:11px;letter-spacing:-1px;line-height:15px;font-family:Dotum,'돋움'}
 #footer .provider_layer span{color:#333;font-size:11px;letter-spacing:-1px;line-height:15px;font-family:Dotum,'돋움'}
-#footer .provider_layer .arrow{display:block;position:absolute;bottom:-6px;left:50%;margin-left:-4px;width:9px;height:6px;background:url(https://ssl.pstatic.net/static/nfinance/2016/07/bu_arrow.png) no-repeat 0 -10px;font-size:1px}
+#footer .provider_layer .arrow{display:block;position:absolute;bottom:-6px;left:50%;margin-left:-4px;width:9px;height:6px;background:url(https://ssl.pstatic.net/static/nfinance/2016/07/bu_arrow.png) no-repeat 0 -10px;font-size:1px}*/
 /* selectbox */
 .selectbox-noscript *{display:none}
 .selectbox-noscript .selectbox-source{display:inline;position:relative;left:0}
